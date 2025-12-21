@@ -1,8 +1,8 @@
 defmodule SampleApp.ClockScene do
-  @width 320
-  @height 240
-
-  @color_order :bgr
+  @display_options Application.compile_env(:sample_app, :display_options, [])
+  @width Keyword.get(@display_options, :width, 320)
+  @height Keyword.get(@display_options, :height, 240)
+  @color_order Application.compile_env(:sample_app, :color_order, :rgb)
   @tz_offset_seconds 9 * 3600
 
   def start_link(args, opts) do
