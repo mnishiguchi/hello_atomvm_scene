@@ -16,18 +16,20 @@ defmodule SampleApp.HinomaruScene do
 
   def handle_info(:update_display, state) do
     label = {:text, 10, 20, :default16px, panel_color(0x000000), :transparent, "Hinomaru test"}
+    radius = div(min(@width, @height) * 3, 10)
 
     hinomaru =
       filled_circle_scanlines(
         div(@width, 2),
         div(@height, 2),
-        div(@height * 3, 10),
+        radius,
         panel_color(0xBC002D)
       )
 
     background = {:rect, 0, 0, @width, @height, panel_color(0xFFFFFF)}
 
     items = [label] ++ hinomaru ++ [background]
+
     {:noreply, state, [{:push, items}]}
   end
 
