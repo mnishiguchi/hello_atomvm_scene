@@ -19,7 +19,7 @@ ATOMVM_REF="main"
 
 # AtomGL is pinned to a known-good revision; use a branch/tag or a full SHA.
 ATOMGL_URL="https://github.com/atomvm/atomgl.git"
-ATOMGL_REF="ed262189b82c9c30c153e16e8c7b64f15fe2adf8"
+ATOMGL_REF="main"
 
 IDF_PATH_DEFAULT="${HOME}/esp/esp-idf"
 IDF_PATH="${IDF_PATH:-$IDF_PATH_DEFAULT}"
